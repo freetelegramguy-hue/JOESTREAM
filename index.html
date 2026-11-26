@@ -1,68 +1,88 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JOESTREAM</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial}
-header{display:flex;justify-content:space-between;padding:15px 20px;position:fixed;top:0;width:100%;z-index:10;background:linear-gradient(#000,transparent)}
-.logo{color:red;font-size:24px;font-weight:bold}
-nav a{color:#fff;text-decoration:none;margin-left:15px;font-size:14px}
-.slider-box{position:relative;width:100%;height:75vh;overflow:hidden}
-.slider{position:absolute;width:100%;height:100%;opacity:0;transform:translateX(100%);transition:all 1s ease}
-.slider.active{opacity:1;transform:translateX(0)}
-.slider img{width:100%;height:100%;object-fit:cover}
-.info{position:absolute;bottom:40px;left:20px;max-width:90%}
-.info h1{font-size:32px;margin-bottom:8px}
-.info p{font-size:14px;color:#ddd;margin-bottom:12px}
-button{padding:10px 18px;border:none;border-radius:5px;font-weight:bold}
-.play{background:red;color:#fff}
-.more{background:#555;color:#fff;margin-left:8px}
-.row{padding:15px}
-.row h3{margin-bottom:10px}
-.posters{display:flex;gap:10px;overflow-x:auto}
-.posters img{width:140px;height:200px;object-fit:cover;border-radius:8px}
-</style>
-</head>
-<body>
-
-<header>
-<div class="logo">JOESTREAM</div>
-<nav><a href="#">Home</a><a href="#">Movies</a><a href="#">My List</a></nav>
-</header>
-
-<div class="slider-box">
-  <div class="slider active">
-    <img src="https://image.tmdb.org/t/p/w1280/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg"></img>
-    <div class="info"><h1>Spider-Man: No Way Home</h1><p>Peter Parker must fix the multiverse.</p><button class="play">▶ Play</button><button class="more">More Info</button></div>
-  </div>
-  <div class="slider">
-    <img src="https://image.tmdb.org/t/p/w1280/1X7vow16X7CnCoexXh4H4F2yDJv.jpg"></img>
-    <div class="info"><h1>Avengers: Endgame</h1><p>The heroes assemble for one last battle.</p><button class="play">▶ Play</button><button class="more">More Info</button></div>
-  </div>
-  <div class="slider">
-    <img src="https:IMG-b21e87d1-cf85-4faf-a714-984ca4b1aa24">
-    <div class="info"><h1>Mashile:Magic and muscles</h1><p>Mashle: Magic and Muscles is a Japanese fantasy comedy action series adapted from Hajime Kōmoto's manga, following a magicless boy who survives a magic-ruled society using pure physical strength..</p><button class="play">▶ Play</button><button class="more">More Info</button></div>
-  </div>
-</div>
-
-<div class="row"><h3>Trending Now</h3><div class="posters">
-<img src="https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg">
-<img src="https://image.tmdb.org/t/p/w500/1X7vow16X7CnCoexXh4H4F2yDJv.jpg">
-<img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg">
-<img src=IMG-b21e87d1-cf85-4faf-a714-984ca4b1aa24">
-</div></div>
-
-<script>
-let i=0;
-let s=document.querySelectorAll('.slider');
-setInterval(()=>{
-s[i].classList.remove('active');
-i=(i+1)%s.length;
-s[i].classList.add('active');
-},4000);
-</script>
-
-</body>
-</html>
+<! DOCTYPE html>
+  <html>
+    <head>
+     <html lang ="en">
+     <meta charset ="UTF-8"/>
+    </head>
+    
+  <body>
+    
+    <style>
+      body{
+        margin:0;
+        background: #000;
+      }
+      
+      img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .box{
+        position: relative;
+        width:100%;
+        height: 400px;
+      }
+      
+      .info{
+        margin-top: -170px;
+        margin-left: 30px;
+        position: absolute;
+        color: #fff;
+      }
+      
+      #title{
+        font-family:sans-serif;
+        font-weight: bolder;
+        font-size: 50px;
+        text-shadow: 0px 0px 2px #000;
+      }
+      
+      #desc{
+        margin-top: -30px;
+        margin-left: 50px;
+        font-family: sans-serif;
+        font-weight: 900;
+        font-size:20px;
+        text-shadow: 0px 0px 1px #000;
+      }
+    </style>
+    <div class="box">
+    <img id="pic" src="chosen.jpg">
+      <div class="info">
+        <h1 id="title">The Chosen</h1>
+        <p id="desc">is a Christian historical drama series created by Dallas Jenkins that  [Highlight start] follows the life and ministry of Jesus of Nazareth through the eyes of those around him [Highlight end] . Though often watched in theaters as special events, it is a multi-season show rather than a standalone movie.</p>
+        
+        <button class="play" onclick="alert('playing ...')">▶ Play</button>
+      </div>
+    </div>
+  </body>
+    
+    <script>
+    
+      let pics = [
+        {img:"chosen.jpg", title:"The chosen" ,desc:"is a Christian historical drama series created by Dallas Jenkins that  [Highlight start] follows the life and ministry of Jesus of Nazareth through the eyes of those around him [Highlight end] . Though often watched in theaters as special events, it is a multi-season show rather than a standalone movie."},
+        {img:"Miracles.jpg", title:"Miracles from Heaven" ,desc:"A young girl who was healed by the grace of GOD."},
+        {img:"breakthrough.jpg", title :"Breakthrough" ,desc:"Breakthrough is a 2019 English-language Christian medical drama directed by Roxann Dawson, based on the true story of 14-year-old John Smith's miraculous survival after falling through an icy Missouri lake."}
+      ];
+      
+      let i = 0;
+      
+      setInterval(function(){
+        i = i + 1;
+        
+        if(i == 3){i = 0;}
+        
+        document.getElementById("pic").src = pics[i].img;
+        
+        document.getElementById('title').innerText = pics[i].title;
+        
+        document.getElementById('desc').innerText = pics[i].desc;
+        
+      },4000);
+      
+      
+    </script>
+  </html>
